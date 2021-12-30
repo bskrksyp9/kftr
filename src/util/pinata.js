@@ -1,8 +1,8 @@
 import { async } from 'q';
 
 require('dotenv').config();
-const key = process.env.REACT_APP_PINATA_KEY;
-const secret = process.env.REACT_APP_PINATA_SECRET;
+const key = "bd35f7d66f82f2c1855c";
+const secret = "36f318167515b7f74afee518b2497c686c3f8a0a4e26cf69d7fc94d4594d02f0";
 const axios = require('axios');
 
 
