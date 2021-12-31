@@ -13,6 +13,7 @@ const Minter = (props) => {
   const [name2, setName2] = useState("");
   const [description, setDescription] = useState("");
   const [url, setURL] = useState("");
+  const [tagInputVal, setTagInputVal] = useState("");
 
   useEffect(async () => {
     const { address, status } = await getCurrentWalletConnected();
@@ -64,6 +65,10 @@ const Minter = (props) => {
     }
   };
 
+  function onChangeTagInput(e) {
+    setTagInputVal(e.target.value.replace(/[^\u0C82\u0C83\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBC-\u0CC4\u0CC6-\u0CC8\u0CCA-\u0CCD\u0CD5\u0CD6\u0CDE\u0CE0-\u0CE3\u0CE6-\u0CEF\u0CF1\u0CF2 ]/ig,""));
+}
+
   return (
     <div className="Minter">
       <button id="walletButton" onClick={connectWalletPressed}>
@@ -96,10 +101,13 @@ const Minter = (props) => {
         />
         <h2>ಕನ್ನಡದಲ್ಲಿ ಶೀರ್ಷಿಕೆ: </h2>
         <input
+        value={tagInputVal}
           type="text"
           placeholder="
           ಉದಾಹರಣೆಗೆ: ಪ್ರಚಂಡ ಕುಳ್ಳ"
-          onChange={(event) => setName(event.target.value)}
+          onChange={(event) => 
+            onChangeTagInput(event)
+            }
         />
         <h2>ಆಂಗ್ಲದಲ್ಲಿ ಶೀರ್ಷಿಕೆ: </h2>
         <input
