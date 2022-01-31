@@ -72,6 +72,9 @@ const Minter = (props) => {
 
   return (
     <div className="Minter">
+    <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light"
+    data-type="VERTICAL" data-vanity="bskrksyp" data-version="v1"><a class="badge-base__link LI-simple-link"
+      href="https://in.linkedin.com/in/bskrksyp?trk=profile-badge">👨‍💻ಭಾಸ್ಕರ ಕಶ್ಯಪ</a></div>
       <button id="walletButton" onClick={connectWalletPressed}>
         {walletAddress.length > 0 ? (
           "ಸಂಪರ್ಕಿಸಲಾಗಿದೆ: " +
